@@ -4,6 +4,7 @@
         "@symfony/webpack-encore": "^1.0.0",
         "autoprefixer": "^9.8.6",
         "core-js": "^3.0.0",
+        "jquery": "^3.5.1",
         "postcss-loader": "^5.0.0",
         "regenerator-runtime": "^0.13.2",
         "sass": "^1.32.6",
@@ -24,5 +25,10 @@
         "last 2 versions",
         "Firefox ESR",
         "not dead"
-    ]
+    ],
+    "dependencies": {
+        "@popperjs/core": "^2.6.0",
+        "bootstrap": "^5.0.0-beta2",
+        "font-awesome": "^4.7.0"
+    }
 }
