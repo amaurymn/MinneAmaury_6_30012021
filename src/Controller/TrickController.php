@@ -2,35 +2,52 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class TrickController
+class TrickController extends AbstractController
 {
     /**
-     * @Route ("/tricks/details/{slug}", name="tricks_details")
-     */
-    public function detail()
-    {
-    }
-
-    /**
+     * Create new trick
      * @Route ("/tricks/create", name="tricks_create")
      */
-    public function create()
+    public function create(): Response
     {
+        return $this->render('tricks/trickCreate.html.twig');
     }
 
     /**
-     * @Route ("/tricks/update/{id}", name="tricks_update")
+     * Get single trick page
+     * @Route ("/tricks/{slug}", name="tricks_details")
      */
-    public function update()
+    public function detail(): Response
     {
+        return $this->render('tricks/trickDetails.html.twig');
     }
 
     /**
-     * @Route ("/tricks/delete/{id}", name="tricks_delete")
+     * Update trick
+     * @Route ("/tricks/{slug}/update", name="tricks_update")
      */
-    public function delete()
+    public function update(): Response
+    {
+        return $this->render('tricks/trickUpdate.html.twig');
+    }
+
+    /**
+     * Delete trick
+     * @Route ("/tricks/{slug}/delete", name="tricks_delete")
+     */
+    public function delete(): Response
+    {
+        return new Response("Deleted trick");
+    }
+
+    /**
+     * Return comments
+     */
+    public function getComments(): void
     {
     }
 }

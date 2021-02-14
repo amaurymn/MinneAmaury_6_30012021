@@ -2,9 +2,10 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class HomeController
+class HomeController extends AbstractController
 {
 
     /**
@@ -12,6 +13,7 @@ class HomeController
      */
     public function showHome()
     {
+        return $this->render('home/home.html.twig');
     }
 
 }
