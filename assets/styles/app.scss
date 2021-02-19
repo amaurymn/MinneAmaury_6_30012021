@@ -1,13 +1,13 @@
 @charset "utf-8";
 
-/* SnowTriks */
-@import "partials/variables";
+// SnowTriks
+@import 'partials/variables';
 
-/* External libs */
-@import "~@fortawesome/fontawesome-free/css/all.min.css";
-@import "~bootstrap";
+// External libs
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '~bootstrap';
 
-/* SnowTriks */
-@import "partials/global";
-@import "partials/navbar";
-@import "partials/footer";
+// SnowTriks
+@import 'partials/global';
+@import 'partials/navbar';
+@import 'partials/footer';
