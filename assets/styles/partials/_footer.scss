@@ -1,0 +1,28 @@
+footer {
+  &.page-footer {
+    .copyright {
+      line-height: 2rem;
+      color: $gray-500;
+    }
+
+    .social-list {
+      margin-top: 0;
+      margin-bottom: 0;
+      list-style: none;
+
+      .social-item {
+        font-size: 20px;
+        margin: 0 10px;
+
+        a {
+          transition: $transition-base;
+          color: $light;
+
+          &:hover {
+            color: $gray-500;
+          }
+        }
+      }
+    }
+  }
+}
