@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:type" content="{% block ogType %}website{% endblock %}"/>
+    <meta property="og:title" content="SnowTricks : {% block ogTitle %}l’actu du Snowboard, tests, photos, vidéos, conseils!{% endblock %}"/>
+    <meta property="og:description" content="Snowtricks : {% block ogDescription %}le site du snowboard français avec tests matériel de snowboard, photos, vidéos, conseils pour progresser.{% endblock %}"/>
+    <meta property="og:url" content="{% block ogUrl %}{{ app.request.uri }}{% endblock %}"/>
+    <meta property="og:site_name" content="SnowTricks"/>
+    <meta property="og:image" content="{% block ogImg %}{{ asset('img/site-logo.png') }}{% endblock %}"/>
+    {% block meta %}{% endblock %}
+    <title>SnowTricks : {% block title %}l’actu du Snowboard, tests, photos, vidéos, conseils!{% endblock %}</title>
+    <meta name="description" content="Snowtricks : {% block pageDescription %}le site du snowboard français avec tests matériel de snowboard, photos, vidéos, conseils pour progresser.{% endblock %}"/>
+    <link rel="shortcut icon" type="image/png" href="{{ asset('img/favicon.png') }}"/>
 
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+{% include 'partials/_header.html.twig' %}
+<body>
+{% block body %}{% endblock %}
+</body>
+{% include 'partials/_footer.html.twig' %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
 </html>
