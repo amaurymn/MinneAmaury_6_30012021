@@ -11,6 +11,3 @@ import './styles/app.scss';
 // Javascripts
 import jquery from 'jquery';
 import bootstrap from 'bootstrap';
-
-// start the Stimulus application
-//import './bootstrap';
