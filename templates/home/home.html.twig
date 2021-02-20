@@ -1,5 +1,39 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    Home page
+    <header class="splash-screen shadow">
+        <div class="container position-relative">
+            <div class="text-center">
+                <h1 class="text-header">SnowTricks<br>Le site communautaire du snowboard</h1>
+            </div>
+        </div>
+        <a href="#main" id="scroll_down"><i class="fas fa-chevron-down"></i></a>
+    </header>
+
+    <main id="main">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 gy-5 gy-md-4">
+                {% for i in 0..15 %}
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <a href="#">
+                                <img class="card-img-top" src="https://picsum.photos/600/500#{{ i }}" alt="">
+                            </a>
+                            <div class="card-body">
+                                <a class="trick-title" href="#">
+                                    <h4 class="card-text mb-2">Trick Title</h4>
+                                </a>
+                                <div class="d-flex justify-content-end align-items-center">
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-edit"></i></button>
+                                        <button type="button" class="btn btn-sm btn-outline-secondary"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
 {% endblock %}
