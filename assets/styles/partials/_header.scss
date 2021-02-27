@@ -1,4 +1,9 @@
 header {
+  h1.text-header {
+    @include rfs(64px);
+    text-shadow: 0 0 10px rgba(33, 37, 41, 0.7);
+  }
+
   &.splash-screen {
     display: flex;
     align-items: center;
@@ -18,11 +23,6 @@ header {
       height: 100%;
       content: "";
       background-image: linear-gradient(to top, transparent, rgba(50, 90, 255, .9));
-    }
-
-    h1.text-header {
-      @include rfs(64px);
-      text-shadow: 0 0 10px rgba(33, 37, 41, 0.7);
     }
 
     a#scroll_down {
@@ -51,6 +51,59 @@ header {
         cursor: pointer;
         opacity: 0.8;
         background-color: #eee;
+      }
+    }
+  }
+
+  &.trick-details {
+    position: relative;
+    padding-top: 5.625rem;
+
+    &:before {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 50%;
+      content: "";
+      background-image: linear-gradient(to bottom, transparent, rgba(50, 90, 255, 0.6));
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+      filter: brightness(50%);
+
+      @media screen and (min-width: 768px) {
+        max-height: 500px;
+      }
+    }
+
+    .container {
+      position: absolute;
+      z-index: 2;
+      top: 5.625rem;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      h1 {
+        @include rfs(64px)
+      }
+    }
+
+    .editTools {
+      position: absolute;
+      z-index: 1;
+      right: 1rem;
+      bottom: 1rem;
+      color: white;
+
+      i {
+        text-shadow: 0 0 10px rgba(33, 37, 41, 0.7);
       }
     }
   }
