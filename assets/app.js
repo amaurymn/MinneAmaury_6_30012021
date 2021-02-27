@@ -11,3 +11,6 @@ import './styles/app.scss';
 // Javascripts
 import jquery from 'jquery';
 import bootstrap from 'bootstrap';
+
+import './js/loadMore';
+import './js/lightbox';

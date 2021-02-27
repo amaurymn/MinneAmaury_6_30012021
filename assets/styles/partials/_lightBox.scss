@@ -1,0 +1,86 @@
+.lightboxAreaC {
+  position: fixed;
+  z-index: 150;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+
+  .lightboxC {
+    width: 100%;
+    max-width: 95%;
+    height: 100%;
+    margin: 0 auto;
+    @media screen and (min-width: 1280px) {
+      max-width: 65%;
+    }
+  }
+
+  .lightbox {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .lightbox-text {
+    padding: 20px;
+    color: #FFF;
+  }
+
+  .lightbox-item {
+    img {
+      display: block;
+      width: 90%;
+      max-width: 90%;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .vid {
+      position: relative;
+      overflow: hidden;
+      height: 0;
+      padding-bottom: 56.25%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    .lightbox-close {
+      position: absolute;
+      top: -50px;
+      right: 0;
+
+      &:before {
+        font-family: "Font Awesome 5 Free";
+        font-size: 2rem;
+        font-weight: 900;
+        position: absolute;
+        z-index: 100;
+        top: 3rem;
+        right: -3rem;
+        content: "\f057";
+
+        transition: all 0.2s ease-in;
+      }
+
+      &:hover {
+        &:before, &:after {
+          color: #a32138;
+        }
+      }
+    }
+  }
+}
+
+a[data-lightbox] .text {
+  display: none;
+}
