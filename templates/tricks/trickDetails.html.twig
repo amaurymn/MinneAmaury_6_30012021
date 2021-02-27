@@ -1,5 +1,89 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-Trick Details
+    <header class="trick-details shadow">
+        <img src="https://picsum.photos/1920/1080" alt="">
+        <div class="container d-flex flex-column justify-content-center">
+            <div class="text-center text-light">
+                <h1 class="text-header">Trick title</h1>
+            </div>
+        </div>
+        <div class="editTools">
+            <i class="fas fa-2x fa-edit"></i>
+            <i class="far fa-2x fa-trash-alt"></i>
+        </div>
+    </header>
+
+    <main id="trickDetails">
+        <section class="container tricks-images my-5">
+            {% for i in 0..1 %}
+                <a href="https://picsum.photos/1920/1080#{{ i }}" data-lightbox="image" class="image my-1 mx-1">
+                    <img src="https://picsum.photos/1920/1080#{{ i }}" alt="" class="img-thumbnail">
+                </a>
+            {% endfor %}
+            {% for i in 0..1 %}
+                <a href="https://www.youtube.com/watch?v=NpEaa2P7qZI" data-lightbox="video" class="image my-1 mx-1">
+                    <img src="https://picsum.photos/1920/1080#{{ i }}" alt="" class="img-thumbnail">
+                </a>
+            {% endfor %}
+        </section>
+
+        <section class="container text-justify my-5">
+            <p>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>. Accusamus accusantium, aperiam dolores excepturi exercitationem illo in molestiae placeat quaerat tempora? Animi atque culpa deserunt dolor, dolorum qui tempora temporibus voluptatem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, aperiam dolores excepturi exercitationem illo in molestiae placeat quaerat tempora? Animi atque culpa deserunt dolor, dolorum qui tempora temporibus voluptatem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, aperiam dolores excepturi exercitationem illo in molestiae placeat quaerat tempora? Animi atque culpa deserunt dolor, dolorum qui tempora temporibus voluptatem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, aperiam dolores excepturi exercitationem illo in molestiae placeat quaerat tempora? Animi atque culpa deserunt dolor, dolorum qui tempora temporibus voluptatem.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, aperiam dolores excepturi exercitationem illo in molestiae placeat quaerat tempora? Animi atque culpa deserunt dolor, dolorum qui tempora temporibus voluptatem.</p>
+        </section>
+
+        <section class="container">
+            <hr>
+            <div class="d-flex justify-content-between flex-wrap">
+                <span>Par: <b>Utilisateur</b></span>
+                <span class="small text-muted">
+                    <span>Ajouté le: <b><time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></b></span>
+                    <span><small class="text-muted">(Edité le: <b><time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></b>)</small></span>
+                </span>
+                <span>Catégorie: <span class="badge rounded-pill bg-blue-trick">Tricks</span></span>
+            </div>
+            <hr>
+        </section>
+
+        <section class="container comments-container my-5">
+            <div class="col-sm-12 col-lg-8 m-auto">
+
+                <div class="h3 mb-3">Laisser un commentaire</div>
+
+                <div class="my-5 text-center">
+                    <i class="fas fa-lock"></i>
+                    Veuillez <a class="font-weight-bolder" href="/login" title="Connexion">vous connecter</a> pour poster un commentaire.
+                </div>
+
+                <div class="comment-form">
+                    <form>
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" rows="4"></textarea>
+                        </div>
+                        <div class="col-12 text-end">
+                            <button type="submit" class="btn btn-blue-trick text">Envoyer</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="comments mb-4">
+                    {% for i in 0..1 %}
+                        <div class="single-comment rounded shadow bg-white">
+                            <span class="date">Le: <time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></span>
+                            <span class="d-block text-muted mb-2">Par: JohnDoesnt</span>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos numquam vel! Accusamus, culpa cum cupiditate, delectus doloremque, eius esse facere harum inventore nam numquam quae qui similique voluptas voluptatum.</p>
+                        </div>
+                    {% endfor %}
+
+                    <div class="d-flex justify-content-center mt-5">
+                        <div id="loadMoreBtn" class="btn btn-secondary shadow btn-lg">Load More</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 {% endblock %}
