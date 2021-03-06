@@ -25,6 +25,12 @@ a {
   }
 }
 
+main#main .container {
+  margin-top: -3.125rem;
+  margin-bottom: 3rem;
+  padding-top: 6.875rem;
+}
+
 .bg-blue-trick {
   background-color: $blue-trick;
 }
@@ -55,18 +61,6 @@ a {
       color: $light;
       border-radius: 2px;
       background-color: $blue-trick;
-    }
-  }
-
-  .tricks-images {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-
-    @media screen and (min-width: 768px) {
-      a img {
-        width: 300px;
-      }
     }
   }
 }
