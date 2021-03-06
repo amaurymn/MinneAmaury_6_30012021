@@ -1,8 +1,18 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" integrity="sha384-DHTcHgDmgCyDWpUwpLQzm6cNZ5yvFAYI0vU8XIQCJ/3Lo20Vo6ZUA3IG+yMxRht5" crossorigin="anonymous">
+    {{ parent() }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" integrity="sha384-IfLfjDfQTV2I5QsmQ7FFwFnbb+kP4EYjvNGX8uFJ1LbYMopmI/IUF9FBdcZArxxP" crossorigin="anonymous"></script>
+{% endblock %}
+
 {% block body %}
     <header class="trick-details shadow">
-        <img src="https://picsum.photos/1920/1080" alt="">
+        <img src="http://placeimg.com/1920/1080/nature" alt="">
         <div class="container d-flex flex-column justify-content-center">
             <div class="text-center text-light">
                 <h1 class="text-header">Trick title</h1>
@@ -16,16 +26,28 @@
 
     <main id="trickDetails">
         <section class="container tricks-images my-5">
-            {% for i in 0..1 %}
-                <a href="https://picsum.photos/1920/1080#{{ i }}" data-lightbox="image" class="image my-1 mx-1">
-                    <img src="https://picsum.photos/1920/1080#{{ i }}" alt="" class="img-thumbnail">
-                </a>
-            {% endfor %}
-            {% for i in 0..1 %}
-                <a href="https://www.youtube.com/watch?v=NpEaa2P7qZI" data-lightbox="video" class="image my-1 mx-1">
-                    <img src="https://picsum.photos/1920/1080#{{ i }}" alt="" class="img-thumbnail">
-                </a>
-            {% endfor %}
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {% for i in 0..3 %}
+                        <div class="swiper-slide">
+                            <div class="image image-modal" data-src="http://placeimg.com/640/480/nature#{{ i }}" data-alt="modal {{ i }}" data-bs-toggle="modal" data-bs-target="#modalImage">
+                                <img src="http://placeimg.com/650/366/nature#{{ i }}" alt="" class="img-fluid rounded swiper-lazy">
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="image video-modal" data-src="https://www.youtube.com/embed/ScMzIvxBSi4" data-bs-toggle="modal" data-bs-target="#modalVideo">
+                                <img src="http://placeimg.com/650/366/nature#{{ i + 2 }}" alt="" class="img-fluid rounded swiper-lazy">
+                                <div class="overlay">
+                                    <i class="fab fa-3x fa-youtube"></i>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
         </section>
 
         <section class="container text-justify my-5">
@@ -38,13 +60,19 @@
 
         <section class="container">
             <hr>
-            <div class="d-flex justify-content-between flex-wrap">
-                <span>Par: <b>Utilisateur</b></span>
-                <span class="small text-muted">
+            <div class="d-flex justify-content-between text-muted small">
+                <span>
                     <span>Ajouté le: <b><time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></b></span>
                     <span><small class="text-muted">(Edité le: <b><time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></b>)</small></span>
                 </span>
-                <span>Catégorie: <span class="badge rounded-pill bg-blue-trick">Tricks</span></span>
+                <span>Catégorie:
+                    <span class="badge rounded-pill bg-blue-trick me-1">Tricks</span>
+                    <span class="badge rounded-pill bg-blue-trick me-1">Tricks</span>
+                    <span class="badge rounded-pill bg-blue-trick me-1">Tricks</span></span>
+            </div>
+            <div class="d-flex justify-content-between text-muted small">
+                <span>Par: <b>Utilisateur</b></span>
+                <span>Contributeurs: <b>Utilisateur, Utilisateur</b></span>
             </div>
             <hr>
         </section>
@@ -57,17 +85,6 @@
                 <div class="my-5 text-center">
                     <i class="fas fa-lock"></i>
                     Veuillez <a class="font-weight-bolder" href="/login" title="Connexion">vous connecter</a> pour poster un commentaire.
-                </div>
-
-                <div class="comment-form">
-                    <form>
-                        <div class="form-group mb-3">
-                            <textarea class="form-control" rows="4"></textarea>
-                        </div>
-                        <div class="col-12 text-end">
-                            <button type="submit" class="btn btn-blue-trick text">Envoyer</button>
-                        </div>
-                    </form>
                 </div>
 
                 <div class="comments mb-4">
@@ -86,4 +103,6 @@
             </div>
         </section>
     </main>
+    {% include 'modal/imageModal.html.twig' %}
+    {% include 'modal/videoModal.html.twig' %}
 {% endblock %}
