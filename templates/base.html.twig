@@ -20,14 +20,14 @@
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
+
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
 </head>
 {% include 'partials/_header.html.twig' %}
 <body>
 {% block body %}{% endblock %}
 </body>
 {% include 'partials/_footer.html.twig' %}
-
-{% block javascripts %}
-    {{ encore_entry_script_tags('app') }}
-{% endblock %}
 </html>

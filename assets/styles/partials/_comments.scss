@@ -1,0 +1,35 @@
+.comments-container {
+  .comments {
+    margin-top: 2.5rem;
+  }
+
+  .single-comment {
+    position: relative;
+    margin-bottom: 1.875rem;
+    padding: 1.25rem;
+
+    h4 {
+      color: #4a4a4a;
+    }
+
+    p {
+      margin-bottom: 0;
+      word-wrap: break-word;
+    }
+
+    .date {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: $blue-trick;
+    }
+  }
+
+  .comment-form {
+    textarea {
+      transition: inherit;
+      border-radius: 5px;
+      box-shadow: 0 .2rem 1rem rgba(0, 0, 0, .15);
+    }
+  }
+}

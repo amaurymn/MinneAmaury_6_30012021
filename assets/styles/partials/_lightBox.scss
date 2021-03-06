@@ -1,0 +1,88 @@
+@mixin modalBtn {
+  .btn-close {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    background-color: white;
+  }
+}
+
+.modal-img {
+  .modal-dialog {
+    margin: 3em auto;
+
+    .modal-content {
+      @include modalBtn();
+    }
+  }
+}
+
+.modal-video {
+  .modal-dialog {
+    max-width: 1000px;
+    margin: 5em auto;
+
+    .modal-content {
+      @include modalBtn();
+
+      .embed-container {
+        padding-bottom: 56.25%;
+
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+}
+
+.video-modal {
+  .overlay {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: color .2s ease-in;
+    text-align: center;
+    color: $light-transparency;
+    text-shadow: 0 0 6px black;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.video-modal, .image-modal {
+  cursor: zoom-in;
+}
+
+// Swiper carousel
+.swiper-container {
+  width: 100%;
+  height: 100%;
+
+  .swiper-scrollbar {
+    bottom: -10px;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    padding: 24px;
+    color: $blue-trick;
+    border-radius: 5px;
+    background-color: $light-transparency;
+    box-shadow: 0 0 10px rgba(33, 37, 41, 0.2);
+
+    @media screen and (min-width: 1280px) {
+      padding: 30px;
+    }
+  }
+}
