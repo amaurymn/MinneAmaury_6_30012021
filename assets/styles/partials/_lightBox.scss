@@ -1,86 +1,88 @@
-.lightboxAreaC {
-  position: fixed;
-  z-index: 150;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.9);
+@mixin modalBtn {
+  .btn-close {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    background-color: white;
+  }
+}
 
-  .lightboxC {
-    width: 100%;
-    max-width: 95%;
-    height: 100%;
-    margin: 0 auto;
-    @media screen and (min-width: 1280px) {
-      max-width: 65%;
+.modal-img {
+  .modal-dialog {
+    margin: 3em auto;
+
+    .modal-content {
+      @include modalBtn();
     }
   }
+}
 
-  .lightbox {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+.modal-video {
+  .modal-dialog {
+    max-width: 1000px;
+    margin: 5em auto;
 
-  .lightbox-text {
-    padding: 20px;
-    color: #FFF;
-  }
+    .modal-content {
+      @include modalBtn();
 
-  .lightbox-item {
-    img {
-      display: block;
-      width: 90%;
-      max-width: 90%;
-      height: auto;
-      margin: 0 auto;
-    }
+      .embed-container {
+        padding-bottom: 56.25%;
 
-    .vid {
-      position: relative;
-      overflow: hidden;
-      height: 0;
-      padding-bottom: 56.25%;
-
-      iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-
-  @media screen and (min-width: 1280px) {
-    .lightbox-close {
-      position: absolute;
-      top: -50px;
-      right: 0;
-
-      &:before {
-        font-family: "Font Awesome 5 Free";
-        font-size: 2rem;
-        font-weight: 900;
-        position: absolute;
-        z-index: 100;
-        top: 3rem;
-        right: -3rem;
-        content: "\f057";
-
-        transition: all 0.2s ease-in;
-      }
-
-      &:hover {
-        &:before, &:after {
-          color: #a32138;
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: block;
+          width: 100%;
+          height: 100%;
         }
       }
     }
   }
 }
 
-a[data-lightbox] .text {
-  display: none;
+.video-modal {
+  .overlay {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: color .2s ease-in;
+    text-align: center;
+    color: $light-transparency;
+    text-shadow: 0 0 6px black;
+
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+.video-modal, .image-modal {
+  cursor: zoom-in;
+}
+
+// Swiper carousel
+.swiper-container {
+  width: 100%;
+  height: 100%;
+
+  .swiper-scrollbar {
+    bottom: -10px;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    padding: 24px;
+    color: $blue-trick;
+    border-radius: 5px;
+    background-color: $light-transparency;
+    box-shadow: 0 0 10px rgba(33, 37, 41, 0.2);
+
+    @media screen and (min-width: 1280px) {
+      padding: 30px;
+    }
+  }
 }
