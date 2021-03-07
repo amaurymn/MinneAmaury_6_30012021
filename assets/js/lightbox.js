@@ -3,12 +3,10 @@ const swiper = new Swiper('.swiper-container', {
     loop: true,
     lazy: true,
     mousewheel: true,
+    spaceBetween: 10,
     navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
-    },
-    scrollbar: {
-        el: '.swiper-scrollbar',
     },
     keyboard: {
         enabled: true,
@@ -19,20 +17,17 @@ const swiper = new Swiper('.swiper-container', {
     },
     breakpoints: {
         '@0.00': {
-            slidesPerView: 1.1,
-            spaceBetween: 10,
+            slidesPerView: 1,
+
         },
         '@0.75': {
-            slidesPerView: 2.2,
-            spaceBetween: 10,
+            slidesPerView: 2,
         },
         '@1.00': {
-            slidesPerView: 3.2,
-            spaceBetween: 20,
+            slidesPerView: 3,
         },
         '@1.50': {
-            slidesPerView: 4.2,
-            spaceBetween: 20,
+            slidesPerView: 4,
         },
     }
 });
