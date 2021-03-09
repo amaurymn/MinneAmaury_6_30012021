@@ -64,3 +64,13 @@ main#main .container {
     }
   }
 }
+
+.metaDesc {
+  span {
+    font-size: 80%;
+
+    &:not(.badge) {
+      color: #6c757d;
+    }
+  }
+}

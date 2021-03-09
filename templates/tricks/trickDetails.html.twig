@@ -58,21 +58,21 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium, aperiam dolores excepturi exercitationem illo in molestiae placeat quaerat tempora? Animi atque culpa deserunt dolor, dolorum qui tempora temporibus voluptatem.</p>
         </section>
 
-        <section class="container">
+        <section class="metaDesc container text-muted">
             <hr>
-            <div class="d-flex justify-content-between text-muted small">
-                <span>
-                    <span>Ajouté le: <b><time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></b></span>
-                    <span><small class="text-muted">(Edité le: <b><time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></b>)</small></span>
-                </span>
-                <span>Catégorie:
+            <span class="d-block">Par: <b>Utilisateur</b></span>
+            <span class="d-block">Contributeurs: <b>Utilisateur, Utilisateur</b></span>
+            <div class="row justify-content-between">
+                <div class="d-flex flex-wrap col-lg-6">
+                    <span>Ajouté le: <b><time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></b>&nbsp;</span>
+                    <span>(Edité le: <b><time datetime="2021-02-26T10:00:00+01:00">{{ "now"|date("m/d/Y à H:i") }}</time></b>)</span>
+                </div>
+                <div class="col-lg-6 text-lg-end">
+                    <span>Catégorie:</span>
                     <span class="badge rounded-pill bg-blue-trick me-1">Tricks</span>
                     <span class="badge rounded-pill bg-blue-trick me-1">Tricks</span>
-                    <span class="badge rounded-pill bg-blue-trick me-1">Tricks</span></span>
-            </div>
-            <div class="d-flex justify-content-between text-muted small">
-                <span>Par: <b>Utilisateur</b></span>
-                <span>Contributeurs: <b>Utilisateur, Utilisateur</b></span>
+                    <span class="badge rounded-pill bg-blue-trick me-1">Tricks</span>
+                </div>
             </div>
             <hr>
         </section>
