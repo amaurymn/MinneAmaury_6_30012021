@@ -1,6 +1,7 @@
 Home: Accueil
 Sign up: Inscription
 Sign in: Connexion
+Logout: Déconnexion
 First Name: Prénom
 Last Name: Nom
 Username: Nom d'utilisateur
@@ -9,3 +10,4 @@ Password: Mot de passe
 Repeat Password: Répétez votre mot de passe
 Register: S'inscrire
 Register_Title: Inscription
+Keep me logged in: Rester connecté
