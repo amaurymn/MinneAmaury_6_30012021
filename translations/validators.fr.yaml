@@ -1,0 +1,15 @@
+Please add your Firstname: Veuillez entrer votre prénom.
+Your firstname is too long.: Le prénom est trop long.
+Please add your Lastname: Veuillez entrer votre nom.
+Your lastname is too long.: Le nom est trop long.
+Please add your Username: Veuillez entrer votre pseudo.
+Your username is too long.: Le nom d'utilisateur est trop long.
+This username is already used: Ce nom d'utilisateur est déjà utilisé.
+Please add your Email: Veuillez entrer votre email.
+Your email is too long.: L'adresse email est trop long.
+The email "{{ value }}" is not a valid email.: L'email "{{ value }}" n'est pas une adresse valide.
+This email is already used: Cette adresse email est déjà utilisée.
+Please enter a password: Veuillez entrer un mot de passe.
+Passwords does not match: Les mots de passe correspondent pas.
+Your password is too long.: Le mot de passe est trop long.
+Your password should be at least {{ limit }} characters: Votre mot de passe doit contenir au moins {{ limit }} caractères.
