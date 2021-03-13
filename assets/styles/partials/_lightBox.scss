@@ -8,11 +8,21 @@
 }
 
 .modal-img {
+  padding-left: 17px;
+
   .modal-dialog {
     margin: 3em auto;
 
     .modal-content {
       @include modalBtn();
+      max-height: 80vh;
+      border: none;
+      background: transparent;
+      box-shadow: none;
+
+      img {
+        object-fit: contain;
+      }
     }
   }
 }

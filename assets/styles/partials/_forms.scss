@@ -5,8 +5,9 @@
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
 }
 
-#registrationForm {
+#registrationForm, #loginForm {
   .form-group {
     margin-bottom: 1rem;
   }
 }
+
