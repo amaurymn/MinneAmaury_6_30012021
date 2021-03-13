@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+    <main id="loginForm" class="container d-flex flex-column justify-content-center">
+        <div class="p-90 h-100vh d-flex justify-content-center">
+            <div class="form-container col-lg-5 col-md-8 col-12 m-auto">
+                <div class="d-flex justify-content-center">
+                    <img src="{{ asset('img/site-logo.svg') }}" width="64px" alt="Site Logo">
+                </div>
+
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="mb-3">
+                            Vous êtes connecté(e) en tant que {{ app.user.username }}, <a href="{{ path('app_logout') }}">{{ 'Logout'|trans }}</a>
+                        </div>
+                    {% endif %}
+
+                    <h1 class="h3 mb-3 font-weight-normal text-center">{{ 'Sign in'|trans }}</h1>
+
+                    <div class="form-group">
+                        <label for="inputUsername">{{ 'Username'|trans }}</label>
+                        <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPassword">{{ 'Password'|trans }}</label>
+                        <input type="password" name="password" id="inputPassword" class="form-control" required>
+                    </div>
+
+                    <div class="checkbox mb-3">
+                        <input type="checkbox" id="remember_me" name="_remember_me" checked/>
+                        <label for="remember_me">{{ 'Keep me logged in'|trans }}</label>
+                    </div>
+
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                    <button class="btn btn-lg btn-block btn-blue-trick mt-3 w-100" type="submit">{{ 'Sign in'|trans }}</button>
+                </form>
+            </div>
+        </div>
+    </main>
+{% endblock %}
