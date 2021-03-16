@@ -11,3 +11,16 @@ Repeat Password: Répétez votre mot de passe
 Register: S'inscrire
 Register_Title: Inscription
 Keep me logged in: Rester connecté
+
+The link to verify your email has expired. Please request a new link.: Le lien permettant de vérifier votre adresse email a expiré ou est invalide.
+validation.link.expired.invalid: Le lien permettant de vérifier votre adresse email a expiré ou est invalide.
+
+account:
+  notVerified: Votre compte n'est pas encore vérifié, veuillez utiliser le lien de validation reçu dans l'e-mail.
+  sentValidationEmail: Un email vous a été envoyé à l'adresse %emailAddr%, veuillez cliquer sur le lien présent dans le mail pour valider votre compte.
+registration:
+  validate: Bienvenue %userName%, votre inscription a bien été validée !
+  alreadyValidated: Votre inscription a déjà été validée.
+user:
+  login: Bienvenue %userName%, vous êtes à présent connecté∙e.
+  logout: Vous êtes à présent déconnecté∙e, à bientôt.
