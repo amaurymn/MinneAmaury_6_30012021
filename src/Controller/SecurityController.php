@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class SecurityController extends AbstractController
 {
@@ -34,5 +36,17 @@ class SecurityController extends AbstractController
     public function logout()
     {
         throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
+    }
+
+    /**
+     * @Route ("logout_message", name="logout_message")
+     * @param TranslatorInterface $translator
+     * @return RedirectResponse
+     */
+    public function logoutMessage(TranslatorInterface $translator): RedirectResponse
+    {
+        $this->addFlash('success', $translator->trans('user.logout'));
+
+        return $this->redirectToRoute('home_page');
     }
 }
