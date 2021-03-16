@@ -19,6 +19,7 @@ security:
             anonymous: true
             lazy: true
             provider: app_user_provider
+            user_checker: App\Security\UserChecker
             remember_me:
                 secret: '%kernel.secret%'
                 lifetime: 604800 # 1 week in seconds
@@ -29,7 +30,7 @@ security:
             logout:
                 path: app_logout
                 # where to redirect after logout
-                target: home_page
+                target: logout_message
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
