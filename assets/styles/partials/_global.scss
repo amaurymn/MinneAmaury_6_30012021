@@ -82,3 +82,30 @@ main#main .container {
 .p-90 {
   padding-top: 90px;
 }
+
+.alerts {
+  position: fixed;
+  z-index: 1;
+  top: 90px;
+  right: 0;
+  margin: 0 10px;
+
+  @media screen and (min-width: 48rem) {
+    max-width: 37.5rem;
+  }
+
+  .alert {
+    margin: .5rem 0;
+    border-left-width: .5rem;
+    border-left-style: solid;
+
+    .btn-close {
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      padding: .5rem;
+    }
+  }
+}
+
